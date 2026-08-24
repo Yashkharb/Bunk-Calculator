@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Do not block rendering resources
+# Allow AI crawlers selectively (do not blanket block)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml
