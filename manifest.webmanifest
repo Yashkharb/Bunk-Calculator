@@ -1,0 +1,17 @@
+{
+  "name": "Attendance Bunk Simulator — Can I bunk tomorrow?",
+  "short_name": "BunkSim",
+  "description": "Know exactly how many classes you can miss. Simulate future bunks, buffer & recovery.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3992ff",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%23000'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter, sans-serif' font-weight='700' font-size='220' fill='white'%3EB%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
