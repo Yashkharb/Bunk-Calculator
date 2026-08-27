@@ -1,0 +1,404 @@
+/* ========== MOBILE RESPONSIVE FIXES — BUNK SIMULATOR ========== */
+/* Fixes horizontal overflow at 320-430px widths */
+
+/* ===== GLOBAL FIXES ===== */
+@media (max-width: 640px) {
+  /* Prevent text overflow */
+  h1, h2, h3, h4, p, a, span, li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* Fix code blocks overflow */
+  .code-block {
+    font-size: 11px;
+    padding: 12px;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Fix tables - allow them to be scrollable */
+  .table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 100% !important;
+    font-size: 12px;
+  }
+
+  thead th {
+    padding: 10px 12px;
+    font-size: 9px;
+  }
+
+  tbody td {
+    padding: 10px 12px;
+  }
+}
+
+/* ===== HEADER FIXES ===== */
+@media (max-width: 640px) {
+  .header-inner {
+    gap: 12px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+}
+
+/* ===== HERO FIXES ===== */
+@media (max-width: 640px) {
+  .hero {
+    padding: 24px 0 0;
+  }
+
+  .hero-top {
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .stats {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .stat strong {
+    font-size: 12px;
+  }
+
+  .stat span {
+    font-size: 9px;
+  }
+}
+
+/* ===== INSTRUMENT FIXES ===== */
+@media (max-width: 640px) {
+  .instrument-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .instrument-field {
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--border);
+    padding: 16px 12px;
+  }
+
+  .instrument-field:last-child {
+    border-bottom: 0;
+  }
+
+  .div-slash {
+    display: none;
+  }
+
+  .field-input {
+    font-size: 32px !important;
+  }
+
+  .preset-rail {
+    gap: 4px;
+  }
+
+  .preset {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+/* ===== RESULT STAGE FIXES ===== */
+@media (max-width: 640px) {
+  .result-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .result-left {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 16px;
+  }
+
+  .result-right {
+    padding: 20px 16px;
+  }
+
+  .pct-big {
+    font-size: clamp(40px, 12vw, 54px);
+  }
+
+  .result-status {
+    font-size: 18px;
+  }
+}
+
+/* ===== BUNK STRIP FIXES ===== */
+@media (max-width: 640px) {
+  .bunk-strip {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .bunk-strip h3 {
+    font-size: 16px;
+  }
+
+  .bunk-answer {
+    min-width: auto;
+  }
+}
+
+/* ===== SIMULATOR FIXES ===== */
+@media (max-width: 640px) {
+  .sim-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sequencer {
+    max-width: 100%;
+  }
+
+  .sim-row {
+    grid-template-columns: 56px 1fr 36px;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .seg button {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .rm {
+    width: 28px;
+    height: 28px;
+  }
+
+  .week-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+  }
+
+  .week-day {
+    padding: 10px 4px;
+  }
+
+  .week-day strong {
+    font-size: 9px;
+  }
+
+  .week-day span {
+    font-size: 8px;
+    padding: 2px 4px;
+  }
+
+  .outcome {
+    position: static;
+    padding: 16px;
+  }
+
+  .outcome-pct {
+    font-size: 36px;
+  }
+
+  .mini-grid {
+    gap: 6px;
+  }
+
+  .mini {
+    padding: 8px 10px;
+  }
+
+  .mini strong {
+    font-size: 12px;
+  }
+}
+
+/* ===== BUFFER SECTION FIXES ===== */
+@media (max-width: 640px) {
+  .buffer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bar-rail {
+    padding: 16px;
+  }
+
+  .legend {
+    gap: 10px;
+    font-size: 10px;
+  }
+}
+
+/* ===== BAND SECTION FIXES ===== */
+@media (max-width: 640px) {
+  .band {
+    padding: 48px 0;
+  }
+
+  .band-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .band-card {
+    padding: 20px;
+  }
+}
+
+/* ===== HOW SECTION FIXES ===== */
+@media (max-width: 640px) {
+  .how-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ===== FOOTER FIXES ===== */
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .foot-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== CONTACT FORM FIXES ===== */
+@media (max-width: 640px) {
+  .contact-fields {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== GRID12 FIXES ===== */
+@media (max-width: 640px) {
+  .grid12 {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .grid12 > div {
+    grid-column: auto !important;
+  }
+}
+
+/* ===== BUTTON FIXES ===== */
+@media (max-width: 640px) {
+  .btn {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  .btn-small {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}
+
+/* ===== FAQ FIXES ===== */
+@media (max-width: 640px) {
+  .faq-q {
+    font-size: 14px;
+    padding: 14px 0;
+  }
+
+  .faq-a {
+    font-size: 12px;
+  }
+}
+
+/* ===== INLINE STYLE FIXES ===== */
+@media (max-width: 640px) {
+  /* Fix any inline grid with 1fr 1fr */
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix inline min-widths */
+  [style*="min-width: 220px"],
+  [style*="min-width: 240px"] {
+    min-width: auto !important;
+  }
+
+  /* Fix buffer section grid */
+  [style*="display:grid;grid-template-columns:1fr 1fr;gap:16px"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Fix stats gap */
+  [style*="gap:24px"] {
+    gap: 16px !important;
+  }
+}
+
+/* ===== EXTRA SMALL SCREENS (320-360px) ===== */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .h-display {
+    font-size: clamp(36px, 14vw, 48px) !important;
+  }
+
+  .h2 {
+    font-size: clamp(22px, 8vw, 28px);
+  }
+
+  .field-input {
+    font-size: 28px !important;
+  }
+
+  .pct-big {
+    font-size: 36px;
+  }
+
+  .week-day {
+    padding: 8px 2px;
+  }
+
+  .week-day strong {
+    font-size: 8px;
+  }
+
+  .week-day span {
+    font-size: 7px;
+    padding: 2px;
+  }
+
+  .instrument-field {
+    padding: 12px 10px;
+  }
+
+  .preset {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  /* Ensure no inline styles cause overflow */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
