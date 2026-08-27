@@ -447,6 +447,200 @@ tbody tr{cursor:pointer}
 .foot-bottom{margin-top:32px;padding-top:16px;border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;font-family:var(--font-mono);color:var(--soft);letter-spacing:0.02em}
 .visual-rail{height:1px;background:linear-gradient(90deg, var(--brand), transparent 60%);opacity:0.5;margin:16px 0}
 
+/* ========== SHARE SECTION ========== */
+.share-section{
+  border-top:1px solid var(--border);
+  background:var(--surface);
+  padding:20px;
+}
+.share-section-head{
+  margin-bottom:16px;
+}
+.share-card{
+  border:1px solid var(--border-strong);
+  background:var(--bg);
+  overflow:hidden;
+  margin-bottom:16px;
+}
+.share-card-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 16px;
+  border-bottom:1px solid var(--border);
+  background:var(--surface-soft);
+}
+.share-card-brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--text-strong);
+}
+.share-card-date{
+  font-family:var(--font-mono);
+  font-size:10px;
+  color:var(--soft);
+  letter-spacing:0.04em;
+}
+.share-card-body{
+  padding:20px 16px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.share-stat{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.share-stat-label{
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.share-stat-value{
+  font-family:var(--font-display);
+  font-size:clamp(24px,5vw,32px);
+  font-weight:700;
+  letter-spacing:-0.03em;
+  color:var(--text-strong);
+  line-height:1;
+}
+.share-stat-muted{
+  color:var(--muted);
+  font-size:clamp(20px,4vw,28px);
+}
+.share-stat-highlight .share-stat-value{
+  color:var(--brand);
+}
+.share-card-footer{
+  padding:12px 16px;
+  border-top:1px solid var(--border);
+  background:var(--surface-soft);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.share-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.btn-share{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  border:1px solid var(--border-strong);
+  background:var(--surface-2);
+  color:var(--text);
+  cursor:pointer;
+  transition:all var(--dur-fast) var(--ease-std);
+}
+.btn-share:hover{
+  border-color:var(--text);
+  background:var(--surface);
+}
+.btn-share svg{
+  flex-shrink:0;
+}
+.btn-whatsapp:hover{
+  border-color:#25D366;
+  color:#25D366;
+}
+.btn-instagram:hover{
+  border-color:#E4405F;
+  color:#E4405F;
+}
+.btn-copy:hover{
+  border-color:var(--brand);
+  color:var(--brand);
+}
+.share-toast{
+  position:fixed;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--text-strong);
+  color:var(--bg);
+  padding:12px 24px;
+  font-family:var(--font-mono);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.04em;
+  z-index:100;
+  box-shadow:0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* Share section mobile */
+@media(max-width:640px){
+  .share-section{
+    padding:16px;
+  }
+  .share-card-body{
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:16px;
+  }
+  .share-stat{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--border-subtle);
+  }
+  .share-stat:last-child{
+    padding-bottom:0;
+    border-bottom:0;
+  }
+  .share-stat-highlight{
+    background:var(--brand-soft);
+    margin:0 -16px;
+    padding:12px 16px;
+    border-bottom:0;
+  }
+  .share-card-footer{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
+  }
+  .share-actions{
+    width:100%;
+    flex-direction:column;
+  }
+  .btn-share{
+    width:100%;
+    justify-content:center;
+    padding:12px 16px;
+  }
+}
+@media(max-width:360px){
+  .share-card-header{
+    padding:10px 12px;
+  }
+  .share-card-body{
+    padding:12px;
+  }
+  .share-stat-highlight{
+    margin:0 -12px;
+    padding:10px 12px;
+  }
+}
+
 /* motion */
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
@@ -579,6 +773,53 @@ tbody tr{cursor:pointer}
             <span id="bunkDetail" style="opacity:0.7">37/45 = 82.22%, still above 75%.</span>
           </div>
         </div>
+      </div>
+
+      <!-- SHARE RESULT SECTION -->
+      <div class="share-section" id="shareSection" aria-label="Share your result">
+        <div class="share-section-head">
+          <div class="section-label" style="color:var(--brand)">Share your result</div>
+          <p style="margin:4px 0 0;font-size:13px;color:var(--muted)">Let your friends know their bunk status too.</p>
+        </div>
+        <div class="share-card" id="shareCard">
+          <div class="share-card-header">
+            <span class="share-card-brand"><span class="logo-mark" style="width:20px;height:20px;font-size:10px">B</span> BUNK STATUS</span>
+            <span class="share-card-date" id="shareDate"></span>
+          </div>
+          <div class="share-card-body">
+            <div class="share-stat">
+              <span class="share-stat-label">Current attendance</span>
+              <span class="share-stat-value" id="shareCurrentPct">84.09%</span>
+            </div>
+            <div class="share-stat">
+              <span class="share-stat-label">Required attendance</span>
+              <span class="share-stat-value share-stat-muted" id="shareRequiredPct">75%</span>
+            </div>
+            <div class="share-stat share-stat-highlight">
+              <span class="share-stat-label">Classes you can bunk</span>
+              <span class="share-stat-value" id="shareBuffer">6</span>
+            </div>
+          </div>
+          <div class="share-card-footer">
+            <span style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.04em">Calculated with <strong style="color:var(--brand)">Bunk Calculator</strong></span>
+            <span style="font-family:var(--font-mono);font-size:10px;color:var(--soft)">yashkharb.github.io/Bunk-Calculator</span>
+          </div>
+        </div>
+        <div class="share-actions">
+          <button class="btn btn-share btn-whatsapp" id="shareWhatsapp" type="button" aria-label="Share result on WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>WhatsApp</span>
+          </button>
+          <button class="btn btn-share btn-instagram" id="shareInstagram" type="button" aria-label="Share result on Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <span>Instagram</span>
+          </button>
+          <button class="btn btn-share btn-copy" id="shareCopy" type="button" aria-label="Copy result link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
+            <span>Copy Link</span>
+          </button>
+        </div>
+        <div class="share-toast" id="shareToast" role="status" aria-live="polite" hidden>Link copied to clipboard!</div>
       </div>
     </div>
   </div>
@@ -1106,6 +1347,8 @@ function render(){
   renderSim(a,h,r);
   // recovery box
   renderRecovery(a,h,r,cur,need);
+  // share section
+  renderShare();
   // footer
   $('#footStats').textContent = (Number.isFinite(a)&&Number.isFinite(h)&&cur!==null) ? `${a}/${h} · ${curFmt}%` : '—';
   updateURL();
@@ -1355,6 +1598,111 @@ function renderWeek(){
 }
 function syncWeekFromSim(){
   // nothing extra – week is derived from sim
+}
+
+// ===== SHARE FUNCTIONALITY =====
+function renderShare(){
+  const a=$('#attended').value, h=$('#held').value, r=$('#required').value;
+  const aNum=Number(a), hNum=Number(h), rNum=Number(r);
+  const valid = validate();
+  const cur = (Number.isFinite(aNum) && Number.isFinite(hNum) && hNum>0) ? (aNum/hNum*100) : null;
+  const mb = (Number.isFinite(aNum)&&Number.isFinite(hNum)&&Number.isFinite(rNum)) ? maxBunks(aNum,hNum,rNum) : 0;
+  const date = new Date();
+  const dateStr = date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  $('#shareDate').textContent = dateStr;
+  $('#shareCurrentPct').textContent = cur===null ? '—' : fmtPct(cur) + '%';
+  $('#shareRequiredPct').textContent = Number.isFinite(rNum) ? rNum + '%' : '—';
+  const bufferEl = $('#shareBuffer');
+  if(!valid || cur===null){
+    bufferEl.textContent = '—';
+    bufferEl.style.color = 'var(--muted)';
+  } else if(cur +1e-9 < rNum){
+    bufferEl.textContent = '0';
+    bufferEl.style.color = 'var(--accent)';
+  } else if(mb===Infinity){
+    bufferEl.textContent = '∞';
+    bufferEl.style.color = 'var(--brand)';
+  } else {
+    bufferEl.textContent = mb;
+    bufferEl.style.color = 'var(--brand)';
+  }
+}
+function getShareMessage(){
+  const a=$('#attended').value, h=$('#held').value, r=$('#required').value;
+  const aNum=Number(a), hNum=Number(h), rNum=Number(r);
+  const cur = (Number.isFinite(aNum) && Number.isFinite(hNum) && hNum>0) ? (aNum/hNum*100) : null;
+  const mb = (Number.isFinite(aNum)&&Number.isFinite(hNum)&&Number.isFinite(rNum)) ? maxBunks(aNum,hNum,rNum) : 0;
+  const curFmt = cur===null ? '—' : fmtPct(cur);
+  const bufferText = cur===null ? '—' : (cur +1e-9 < rNum ? '0 (need to recover!)' : (mb===Infinity ? '∞ (unlimited!)' : mb + ' classes'));
+  return `BUNK STATUS
+Current attendance: ${curFmt}%
+Required attendance: ${rNum}%
+Classes you can bunk: ${bufferText}
+
+Calculated with Bunk Calculator
+yashkharb.github.io/Bunk-Calculator`;
+}
+function getShareUrl(){
+  return location.href;
+}
+$('#shareWhatsapp').addEventListener('click',()=>{
+  const msg = getShareMessage();
+  const url = getShareUrl();
+  const text = `${msg}\n\n${url}`;
+  const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+  window.open(waUrl,'_blank','noopener,noreferrer');
+});
+$('#shareInstagram').addEventListener('click',()=>{
+  const msg = getShareMessage();
+  const url = getShareUrl();
+  const text = `${msg}\n\n${url}`;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(()=>{
+      showToast('Result copied! Open Instagram and paste in your story or DM.');
+    }).catch(()=>{
+      fallbackCopy(text);
+    });
+  } else {
+    fallbackCopy(text);
+  }
+});
+$('#shareCopy').addEventListener('click',()=>{
+  const msg = getShareMessage();
+  const url = getShareUrl();
+  const text = `${msg}\n\n${url}`;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(()=>{
+      showToast('Link copied to clipboard!');
+    }).catch(()=>{
+      fallbackCopy(text);
+    });
+  } else {
+    fallbackCopy(text);
+  }
+});
+function fallbackCopy(text){
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    showToast('Link copied to clipboard!');
+  } catch(e) {
+    prompt('Copy this text:', text);
+  }
+  document.body.removeChild(ta);
+}
+function showToast(message){
+  const toast = $('#shareToast');
+  toast.textContent = message;
+  toast.hidden = false;
+  clearTimeout(toast._timeout);
+  toast._timeout = setTimeout(()=>{
+    toast.hidden = true;
+  }, 3000);
 }
 
 // ===== URL STATE =====
